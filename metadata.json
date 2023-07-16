@@ -1,0 +1,8 @@
+{
+    "name": "Project Activity Reporter",
+    "description": "Track and report file changes in your projects, with enhanced Git support showing branch activity and changes. Works with both Git and non-Git directories",
+    "uuid": "project-activity-reporter@dsabolo.github.io",
+    "shell-version": ["42","43","44","45"],
+    "url": "https://github.com/dsabolo/project-activity-reporter",
+    "version": 1
+}

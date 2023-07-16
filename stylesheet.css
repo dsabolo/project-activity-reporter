@@ -1,0 +1,112 @@
+.system-status-icon {
+    padding: 0 8px;
+    -st-icon-style: symbolic;
+}
+
+.activity-report-content {
+    padding: 0;
+    min-width: 600px;
+}
+
+.activity-report-header {
+    padding: 16px;
+    background-color: transparent;
+    border-radius: 6px 6px 0 0;
+    height: 48px;
+    spacing: 16px;
+}
+
+.activity-title-box {
+    spacing: 4px;
+    x-expand: true;
+}
+
+.activity-project-label, .activity-date-label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.activity-nav-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    border: 1px solid rgb(0, 0, 0);
+
+}
+
+.activity-nav-button:hover {
+    background-color: rgba(255,255,255,1);
+}
+
+.activity-report-box {
+    padding: 16px;
+    background-color: transparent;
+}
+
+.activity-report-scroll {
+    /* min-height will be set dynamically */
+    max-height: 80vh;
+}
+
+.activity-report-text {
+    font-family: monospace;
+    font-size: 15px;
+    padding: 0px;
+    padding-top: 8px;
+    white-space: pre;
+    width: 100%;
+    selection-background-color: #3584e4;
+    selection-color: #fff;
+    border: none;
+    background: none;
+}
+
+.activity-report-text:focus {
+    border: none;
+    background: none;
+}
+
+.activity-report-error {
+    color: #ff6b6b;
+    font-style: italic;
+    padding: 8px;
+    background-color: rgba(255,0,0,0.1);
+    border-radius: 4px;
+}
+
+.remove-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
+.remove-button:hover {
+    background-color: rgba(255,0,0,0.2);
+}
+
+.no-projects-label {
+    font-style: italic;
+}
+
+.folder-dialog-content {
+    padding: 20px;
+    spacing: 10px;
+    width: 400px;
+}
+
+.folder-dialog-entry {
+    width: 100%;
+}
+
+.activity-button-box {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    spacing: 8px;
+}
+
+.activity-notification {
+    color: #2ec27e;
+    font-weight: bold;
+}
