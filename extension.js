@@ -5,7 +5,9 @@ const { St, GObject, Gio, GLib, Clutter, Pango } = imports.gi;
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
+const ByteArray = imports.byteArray;
 const ModalDialog = imports.ui.modalDialog;
+const ExtensionUtils = imports.misc.extensionUtils;
 
 let activityReporter = null;
 
@@ -200,14 +202,21 @@ const ActivityReportWindow = GObject.registerClass(
             // Clear current report
             this.reportBox.destroy_all_children();
 
-            // Get report using our script
-            let scriptPath = GLib.build_filenamev([GLib.get_home_dir(), 'Workspace', 'gnome_extensions', 'smartTimeTracker', 'git_activity_report.sh']);
+            // Get the extension directory
+            let extension = ExtensionUtils.getCurrentExtension();
+            let scriptPath = GLib.build_filenamev([extension.path, 'git_activity_report.sh']);
             let dateStr = this._formatDate(this.currentDate);
+
+            log(`Loading report from ${scriptPath} for date ${dateStr} and path ${this.projectPath}`);
 
             try {
                 let [success, stdout, stderr, exitStatus] = GLib.spawn_command_line_sync(
                     `bash "${scriptPath}" "${dateStr}" "${this.projectPath}"`
                 );
+
+                if (!success || exitStatus !== 0) {
+                    log(`Error running script: ${ByteArray.toString(stderr)}`);
+                }
 
                 if (success && exitStatus === 0) {
                     let text = '';
