@@ -228,7 +228,8 @@ const ActivityReportWindow = GObject.registerClass(
 
                     if (text) {
                         let monitor = Main.layoutManager.primaryMonitor;
-                        let minHeight = Math.floor(monitor.height * 0.6);
+                        let scaleFactor = St.ThemeContext.get_for_stage(global.stage).scale_factor;
+                        let minHeight = Math.floor((monitor.height / scaleFactor) * 0.6);
 
                         let report = new St.ScrollView({
                             style_class: 'activity-report-scroll',
